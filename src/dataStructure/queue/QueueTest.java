@@ -2,7 +2,7 @@ package dataStructure.queue;
 
 public class QueueTest {
     public static void main(String[] args) {
-        Queue q = new Queue(10);
+        CircleQueue q = new CircleQueue(10);
 
         q.deQueue(); // 예상: 경고문 출력
         q.enQueue(10);

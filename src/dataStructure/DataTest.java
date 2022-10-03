@@ -1,5 +1,6 @@
 package dataStructure;
 
+import dataStructure.queue.CircleQueue;
 import dataStructure.stack.CustomStack;
 import dataStructure.리스트.ArrayList.CustomArrayList;
 
@@ -13,11 +14,11 @@ public class DataTest {
             System.out.println("\n==============================");
             System.out.println("\t\t\t메인 메뉴");
             System.out.println("1. 스택");
-            System.out.println("2. 순차 리스트");
-            System.out.println("3. 연결 리스트");
-            System.out.println("4. 큐");
+            System.out.println("2. 원형 큐");
+            System.out.println("3. 순차 리스트");
+            System.out.println("4. 연결 리스트");
             System.out.println("0. 종료");
-            System.out.println("==============================\n");
+            System.out.println("==============================");
             System.out.print("번호 선택 후 Enter : ");
             int menu = sc.nextInt();
 
@@ -28,20 +29,111 @@ public class DataTest {
                     playStack(sc);
                     break;
                 case 2:
-                    playArrayList(sc);
+                    playCircleQueue(sc);
                     break;
                 case 3:
-                    playQueue(sc);
+                    playArrayList(sc);
+                    break;
             }
         }
     }
+    private static void playCircleQueue(Scanner sc) {
+        CircleQueue queue = null;
 
-    private static void playQueue(Scanner sc) {
+        System.out.println("\n==============================");
+        System.out.println(
+                "배열을 이용한 원형 큐를 생성합니다." +
+                        "\n기본 크기는 10입니다.\n" +
+                        "1. 기본 원형 큐를 생성\n" +
+                        "2. 직접 원형 큐의 크기 지정 후 생성");
+        System.out.println("==============================");
+        System.out.print("번호 선택 후 Enter : ");
+        int initStackSetting = sc.nextInt();
+
+        // 큐 크기 설정
+        if (initStackSetting == 1) {
+            queue = new CircleQueue();
+            System.out.println("기본 크기 큐 생성!");
+        } else if (initStackSetting == 2) {
+            System.out.print("크기를 설정하세요 : ");
+            int customCapacity = sc.nextInt();
+            queue = new CircleQueue(customCapacity);
+            System.out.println(customCapacity + "크기 큐 생성!");
+        }
+
+        while (true) {
+            System.out.println("\n==============================");
+            System.out.println("\t\t\t원형 큐");
+            System.out.println("1. enQueue");
+            System.out.println("2. deQueue");
+            System.out.println("3. peek");
+            System.out.println("4. 전체 출력");
+            System.out.println("5. 초기화");
+            System.out.println("0. 메인 메뉴");
+            System.out.println("==============================");
+            System.out.print("번호 선택 후 Enter : ");
+            int menu = sc.nextInt();
+
+            switch (menu) {
+                case 0:
+                    return;
+                case 1:
+                    System.out.print("추가하려는 값을 입력하세요 : ");
+                    int item = sc.nextInt();
+                    queue.enQueue(item);
+                    break;
+                case 2:
+                    Integer removeItem = queue.deQueue();
+                    if (removeItem == null)
+                        System.out.println("큐는 비어 있습니다!");
+                    else
+                        System.out.println("큐에서 꺼낸 값 : " + removeItem);
+                    break;
+                case 3:
+                    Integer peekItem = queue.peek();
+                    if (peekItem == null)
+                        System.out.println("큐는 비어있습니다!");
+                    else
+                        System.out.println("peek()를 실행한 결과 값은 : " + peekItem);
+                    break;
+                case 4:
+                    queue.allSearch();
+                    break;
+                case 5:
+                    queue.queueInit();
+                    System.out.println("초기화 완료!");
+                    break;
+
+            }
+        }
+
+
 
     }
 
     public static void playStack(Scanner sc) {
-        CustomStack stack = new CustomStack();
+        CustomStack stack = null;
+
+        System.out.println("\n==============================");
+        System.out.println(
+                "배열을 이용한 스택 생성합니다." +
+                        "\n기본 크기는 10입니다.\n" +
+                        "1. 기본 스택 생성\n" +
+                        "2. 직접 스택의 크기 지정 후 생성");
+        System.out.println("==============================");
+        System.out.print("번호 선택 후 Enter : ");
+        int initStackSetting = sc.nextInt();
+
+        // 스택 크기 설정
+        if (initStackSetting == 1) {
+            stack = new CustomStack();
+            System.out.println("기본 크기 스택 생성!");
+        } else if (initStackSetting == 2) {
+            System.out.print("크기를 설정하세요 : ");
+            int customCapacity = sc.nextInt();
+            stack = new CustomStack(customCapacity);
+            System.out.println(customCapacity + "크기 스택 생성!");
+        }
 
         while (true) {
             System.out.println("\n==============================");
@@ -52,7 +144,7 @@ public class DataTest {
             System.out.println("4. 전체 출력");
             System.out.println("5. 초기화");
             System.out.println("0. 메인 메뉴");
-            System.out.println("==============================\n");
+            System.out.println("==============================");
             System.out.print("번호 선택 후 Enter : ");
             int menu = sc.nextInt();
 
@@ -60,24 +152,24 @@ public class DataTest {
                 case 0:
                     return;
                 case 1:
-                    System.out.println("추가하려는 값을 입력하세요 : ");
+                    System.out.print("추가하려는 값을 입력하세요 : ");
                     int item = sc.nextInt();
                     stack.push(item);
                     break;
                 case 2:
                     int pop = stack.pop();
-                    System.out.println("pop() : " + pop);
+                    System.out.println("pop 실행 : " + pop);
                     break;
                 case 3:
                     int peek = stack.peek();
-                    System.out.println("peek() : " + peek);
+                    System.out.println("peek 실행 : " + peek);
                     break;
                 case 4:
                     stack.allSearch();
                     break;
                 case 5:
                     stack.stackInit();
-                    System.out.println("스택 초기화");
+                    System.out.println("스택 초기화 완료!");
                     break;
                 default:
                     System.out.println("잘못 입력하였습니다. 다시 입력해주세요");
@@ -92,10 +184,12 @@ public class DataTest {
         int index = 0;
 
         System.out.println("\n==============================");
-        System.out.println("배열을 이용한 리스트를 생성합니다. 기본 크기는 10입니다.\n" +
+        System.out.println(
+                "배열을 이용한 리스트를 생성합니다." +
+                "\n기본 크기는 10입니다.\n" +
                 "1. 기본 리스트 생성\n" +
                 "2. 직접 리스트의 크기 지정 후 생성");
-        System.out.println("==============================\n");
+        System.out.println("==============================");
         System.out.print("번호 선택 후 Enter : ");
         int initListSetting = sc.nextInt();
 
@@ -121,7 +215,7 @@ public class DataTest {
             System.out.println("7. 리스트 출력");
             System.out.println("8. 초기화");
             System.out.println("0. 메인 메뉴");
-            System.out.println("==============================\n");
+            System.out.println("==============================");
             System.out.print("번호 선택 후 Enter : ");
             int menu = sc.nextInt();
 
@@ -193,9 +287,4 @@ public class DataTest {
         }
     }
 
-    public static void screenClear() {
-        for (int i = 0; i < 80; i++) {
-            System.out.println("");
-        }
-    }
 }

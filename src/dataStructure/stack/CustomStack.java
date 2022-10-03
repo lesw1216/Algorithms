@@ -7,37 +7,34 @@ package dataStructure.stack;
     empty
  */
 
-import java.util.Arrays;
-
 public class CustomStack {
 
     private final int[] stackArr;
-    private int MAX = 100;
+    private int capacity = 10;
     private int top;
 
     public CustomStack() {
         // 기본 초기화
 
-        this.stackArr = new int[MAX];
+        this.stackArr = new int[capacity];
         this.top = 0;
     }
 
     public CustomStack(int capacityInit) {
         // 저장 용량을 직접 설정하여 초기화
 
-        this.stackArr = new int[MAX];
-        this.MAX = capacityInit;
+        this.stackArr = new int[capacity];
+        this.capacity = capacityInit;
         this.top = 0;
 
     }
 
     /*
         스택에 데이터 삽입(밀어 넣기)
-
      */
     public void push(int item) {
         // 스택이 가득 차있는지 검사
-        if (top == MAX) {
+        if (top == capacity) {
             System.out.println("스택이 가득 찼습니다.");
             return;
         }
@@ -69,9 +66,14 @@ public class CustomStack {
     }
 
     public void allSearch() {
+        System.out.print("[");
         for (int i = 0; i < top; i++) {
-            System.out.print(stackArr[i] + " ");
+            if (i == 0)
+                System.out.print(stackArr[i]);
+            else
+                System.out.print(", " + stackArr[i]);
         }
+        System.out.print("]");
     }
 
     public void stackInit() {
