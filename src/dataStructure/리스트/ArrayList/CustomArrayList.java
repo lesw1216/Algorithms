@@ -3,7 +3,11 @@ package dataStructure.리스트.ArrayList;
 import dataStructure.리스트.List;
 
 public class CustomArrayList implements List {
+<<<<<<< HEAD
     private final int[] array;
+=======
+    private int[] array;
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
     private int point;
     private final int capacity;
     public CustomArrayList() {
@@ -18,6 +22,7 @@ public class CustomArrayList implements List {
 
     /*
     리스트 중간에 데이터 삽입하기
+<<<<<<< HEAD
     if 리스트가 가득 차 있다면
         return false
     else
@@ -25,20 +30,34 @@ public class CustomArrayList implements List {
         배열의 원하는 인덱스에 요소 추가
         마지막 데이터 저장 위치를 알기위한 변수 값 1 증가
         return true
+=======
+    if list empty
+        throw error
+    else
+        list[index] = element;
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
      */
     @Override
     public boolean add(int index, int e) {
         // 리스트의 저장공간이 남아있는지 체크
+<<<<<<< HEAD
         if (isFull()) {
+=======
+        if (!isEmpty()) {
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
             // 저장공간 초과
             System.out.println("리스트가 최대값이 저장 되었습니다.");
             return false;
         } else {
+<<<<<<< HEAD
             // 기존 인덱스에 위치했던 값들을 하나씩 뒤로 시프트 한다.
             for (int i = point - 1; i >= index; i--) {
                 array[i + 1] = array[i];
             }
 
+=======
+            // 데이터 추가
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
             array[index] = e;
             point++;
             return true;
@@ -47,6 +66,7 @@ public class CustomArrayList implements List {
 
     /*
         리스트의 끝에 삽입
+<<<<<<< HEAD
         의사 코드
         if 리스트가 가득 차 있다면
             return false
@@ -54,13 +74,21 @@ public class CustomArrayList implements List {
             배열의 끝에 요소 삽입
             마지막 데이터의 저장 위치를 알기 위한 변수 값 1 증가
             return true
+=======
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
      */
     @Override
     public boolean add(int e) {
         // 리스트의 저장공간이 남아있는지 체크
+<<<<<<< HEAD
         if (isFull()) {
             // 저장공간 초과
             System.out.println("리스트의 저장공간이 초과되었습니다.");
+=======
+        if (!isEmpty()) {
+            // 저장공간 초과
+            System.out.println("리스트가 최대값이 저장 되었습니다.");
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
             return false;
         } else {
             array[point] = e;
@@ -90,6 +118,7 @@ public class CustomArrayList implements List {
         point = 0;
     }
 
+<<<<<<< HEAD
     /*
         리스트에서 특정 인덱스의 값 찾기
         if 선택한 인덱스가 제일 마지막 인덱스보다 크다면
@@ -137,6 +166,26 @@ public class CustomArrayList implements List {
     @Override
     public Integer remove(int index) {
         if (isEmpty()) {
+=======
+    @Override
+    public Integer get(int index) {
+        if (point == 0) {
+            return null;
+        } else {
+            return array[index];
+        }
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return point != array.length;
+    }
+
+    @Override
+    public Integer remove(int index) {
+        if (isEmpty()) {
+            // 리스트 비어있을 때
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
             return null;
         } else {
             int temp = array[index];
@@ -160,10 +209,17 @@ public class CustomArrayList implements List {
         result.append("[");
 
         for (int i = 0; i < point; i++) {
+<<<<<<< HEAD
             if (i == 0)
                 result.append(array[i]);
             else
                 result.append(", ").append(array[i]);
+=======
+            if (i == 0) {
+                result.append(array[i]);
+            }
+            result.append(", ").append(array[i]);
+>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
         }
 
         result.append("]");
