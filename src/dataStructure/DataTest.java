@@ -10,10 +10,10 @@ public class DataTest {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
+//<<<<<<< HEAD
+//
+//=======
+//>>>>>>> 170668c9f4ca74341f45ebbe75ae3385314d3c99
         while (true) {
             System.out.println("\n==============================");
             System.out.println("\t\t\t메인 메뉴");
