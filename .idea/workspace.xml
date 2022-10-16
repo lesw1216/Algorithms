@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="713147e7-a9d7-4828-97dc-1a12c0537700" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/Algorithms.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/remote-targets.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DataTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/리스트/ArrayList/ArrayListTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/리스트/ArrayList/ArrayListTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/stack/CustomStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/stack/CustomStack.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataStructure/리스트/ArrayList/CustomArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/리스트/ArrayList/CustomArrayList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +30,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/Programming/Algorithms",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -70,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665943453443</updated>
-      <workItem from="1665943458447" duration="831000" />
+      <workItem from="1665943458447" duration="1975000" />
     </task>
     <servers />
   </component>

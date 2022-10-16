@@ -1,42 +1,33 @@
 package dataStructure.stack;
 
-/*
-    pop
-    push
-    peek
-    empty
- */
-
 public class CustomStack {
 
     private final int[] stackArr;
     private int capacity = 10;
-    private int top;
+    private int top = -1;
 
+    // 기본 초기화
     public CustomStack() {
-        // 기본 초기화
-
         this.stackArr = new int[capacity];
-        this.top = 0;
     }
 
+    // 저장 용량을 직접 설정하여 초기화
     public CustomStack(int capacityInit) {
-        // 저장 용량을 직접 설정하여 초기화
-
         this.stackArr = new int[capacity];
         this.capacity = capacityInit;
-        this.top = 0;
-
     }
 
     /*
         스택에 데이터 삽입(밀어 넣기)
+        if top 과 capacity + 1 이 같다면
+            오버플로우 메시지 출력
+        else
+            스택 내부 배열에 top 먼저 증가시킨 후 해당 인덱스에 아이템 저장
      */
     public void push(int item) {
         // 스택이 가득 차있는지 검사
         if (top == capacity) {
             System.out.println("스택이 가득 찼습니다.");
-            return;
         }
 
         stackArr[top] = item;

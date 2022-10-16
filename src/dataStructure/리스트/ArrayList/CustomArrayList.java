@@ -6,6 +6,7 @@ public class CustomArrayList implements List {
     private final int[] array;
     private int point;
     private final int capacity;
+
     public CustomArrayList() {
         capacity = 10;
         array = new int[capacity];
