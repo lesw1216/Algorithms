@@ -114,25 +114,32 @@ public class DataTest {
     public static void playStack(Scanner sc) {
         CustomStack stack = null;
 
-        System.out.println("\n==============================");
-        System.out.println(
-                "배열을 이용한 스택 생성합니다." +
-                        "\n기본 크기는 10입니다.\n" +
-                        "1. 기본 스택 생성\n" +
-                        "2. 직접 스택의 크기 지정 후 생성");
-        System.out.println("==============================");
-        System.out.print("번호 선택 후 Enter : ");
-        int initStackSetting = sc.nextInt();
+        while (true) {
+            System.out.println("\n==============================");
+            System.out.println(
+                    "배열을 이용한 스택 생성합니다." +
+                            "\n기본 크기는 10입니다.\n" +
+                            "1. 기본 스택 생성\n" +
+                            "2. 직접 스택의 크기 지정 후 생성");
+            System.out.println("==============================");
+            System.out.print("번호 선택 후 Enter : ");
+            int initStackSetting = sc.nextInt();
 
-        // 스택 크기 설정
-        if (initStackSetting == 1) {
-            stack = new CustomStack();
-            System.out.println("기본 크기 스택 생성!");
-        } else if (initStackSetting == 2) {
-            System.out.print("크기를 설정하세요 : ");
-            int customCapacity = sc.nextInt();
-            stack = new CustomStack(customCapacity);
-            System.out.println(customCapacity + "크기 스택 생성!");
+
+            // 스택 크기 설정
+            if (initStackSetting == 1) {
+                stack = new CustomStack();
+                System.out.println("기본 크기 스택 생성!");
+                break;
+            } else if (initStackSetting == 2) {
+                System.out.print("크기를 설정하세요 : ");
+                int customCapacity = sc.nextInt();
+                stack = new CustomStack(customCapacity);
+                System.out.println(customCapacity + "크기 스택 생성!");
+                break;
+            } else
+                System.out.println("!!!1 또는 2번을 입력해주세요.!!!");
+
         }
 
         while (true) {
@@ -152,27 +159,43 @@ public class DataTest {
                 case 0:
                     return;
                 case 1:
-                    System.out.print("추가하려는 값을 입력하세요 : ");
+                    // push 입력
+                    System.out.print("PUSH 하고 싶은 값을 입력하세요 : ");
                     int item = sc.nextInt();
-                    stack.push(item);
+
+                    // 데이터 저장 성공 여부 확인 처리
+                    if (stack.push(item))
+                        System.out.println("== !!PUSH 성공!! ==");
+                    else
+                        System.out.println("== !!PUSH 실패!! ==");
                     break;
                 case 2:
-                    int pop = stack.pop();
-                    System.out.println("pop 실행 : " + pop);
+                    Integer pop = stack.pop();
+
+                    // POP 성공 여부에 따른 처리
+                    if (pop == null)
+                        System.out.println("== !!스택에 데이터가 없습니다!! ==");
+                    else
+                        System.out.println("== 스택에서 꺼낸 값 : " + pop + " ==");
                     break;
                 case 3:
-                    int peek = stack.peek();
-                    System.out.println("peek 실행 : " + peek);
+                    Integer peek = stack.peek();
+
+                    // PEEK 성공 여부에 따른 처리
+                    if (peek == null)
+                        System.out.println("== !!스택에 데이터가 없습니다!! ==");
+                    else
+                        System.out.println("== 스택에서 꺼낸 값 : " + peek + " ==");
                     break;
                 case 4:
                     stack.allSearch();
                     break;
                 case 5:
                     stack.stackInit();
-                    System.out.println("스택 초기화 완료!");
+                    System.out.println("== !!스택 초기화 완료!! ==");
                     break;
                 default:
-                    System.out.println("잘못 입력하였습니다. 다시 입력해주세요");
+                    System.out.println("== !!잘못 입력하였습니다. 다시 입력해주세요!! ==");
             }
         }
 

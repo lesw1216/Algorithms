@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="713147e7-a9d7-4828-97dc-1a12c0537700" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/DataTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/DataTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/stack/CustomStack.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/stack/CustomStack.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/stack/StackTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/stack/StackTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/리스트/ArrayList/CustomArrayList.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithms/dataStructure/리스트/ArrayList/CustomArrayList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dataStructure/DataTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/DataTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/dataStructure/stack/CustomStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/stack/CustomStack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/dataStructure/리스트/ArrayList/CustomArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/dataStructure/리스트/ArrayList/CustomArrayList.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,20 +26,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Programming/Algorithms",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Programming/Algorithms&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="DataTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="dataStructure.DataTest" />
@@ -65,7 +68,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665943453443</updated>
-      <workItem from="1665943458447" duration="1975000" />
+      <workItem from="1665943458447" duration="2578000" />
+      <workItem from="1665948511620" duration="61000" />
+      <workItem from="1665987215554" duration="3116000" />
+      <workItem from="1666020817257" duration="4335000" />
     </task>
     <servers />
   </component>
