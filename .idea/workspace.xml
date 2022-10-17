@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="713147e7-a9d7-4828-97dc-1a12c0537700" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-    </list>
+    <list default="true" id="713147e7-a9d7-4828-97dc-1a12c0537700" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,7 +63,7 @@
       <workItem from="1665943458447" duration="2578000" />
       <workItem from="1665948511620" duration="61000" />
       <workItem from="1665987215554" duration="3116000" />
-      <workItem from="1666020817257" duration="5081000" />
+      <workItem from="1666020817257" duration="5404000" />
     </task>
     <servers />
   </component>
