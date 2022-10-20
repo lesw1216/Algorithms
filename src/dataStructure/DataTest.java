@@ -112,15 +112,15 @@ public class DataTest {
     }
 
     public static void playStack(Scanner sc) {
-        CustomStack stack = null;
+        CustomStack<Integer> stack = null;
 
         while (true) {
             System.out.println("\n==============================");
             System.out.println(
                     "배열을 이용한 스택 생성합니다." +
-                            "\n기본 크기는 10입니다.\n" +
-                            "1. 기본 스택 생성\n" +
-                            "2. 직접 스택의 크기 지정 후 생성");
+                    "\n기본 크기는 10입니다.\n" +
+                    "1. 기본 스택 생성\n" +
+                    "2. 직접 스택의 크기 지정 후 생성");
             System.out.println("==============================");
             System.out.print("번호 선택 후 Enter : ");
             int initStackSetting = sc.nextInt();
@@ -128,18 +128,20 @@ public class DataTest {
 
             // 스택 크기 설정
             if (initStackSetting == 1) {
-                stack = new CustomStack();
-                System.out.println("기본 크기 스택 생성!");
+                stack = new CustomStack<>();
+
+                System.out.println("== 기본 크기 스택 생성 ==");
                 break;
             } else if (initStackSetting == 2) {
-                System.out.print("크기를 설정하세요 : ");
+                System.out.print("스택 사이즈를 설정하세요 : ");
+
                 int customCapacity = sc.nextInt();
-                stack = new CustomStack(customCapacity);
-                System.out.println(customCapacity + "크기 스택 생성!");
+                stack = new CustomStack<>(customCapacity);
+
+                System.out.println("== " + customCapacity + " 사이즈 스택 생성 ==");
                 break;
             } else
-                System.out.println("!!!1 또는 2번을 입력해주세요.!!!");
-
+                System.out.println("== 1 또는 2번을 입력해주세요 ==");
         }
 
         while (true) {
@@ -165,16 +167,16 @@ public class DataTest {
 
                     // 데이터 저장 성공 여부 확인 처리
                     if (stack.push(item))
-                        System.out.println("== !!PUSH 성공!! ==");
+                        System.out.println("== PUSH 성공 ==");
                     else
-                        System.out.println("== !!PUSH 실패!! ==");
+                        System.out.println("== PUSH 실패 ==");
                     break;
                 case 2:
                     Integer pop = stack.pop();
 
                     // POP 성공 여부에 따른 처리
                     if (pop == null)
-                        System.out.println("== !!스택에 데이터가 없습니다!! ==");
+                        System.out.println("== 스택에 데이터가 없습니다 ==");
                     else
                         System.out.println("== 스택에서 꺼낸 값 : " + pop + " ==");
                     break;
@@ -183,7 +185,7 @@ public class DataTest {
 
                     // PEEK 성공 여부에 따른 처리
                     if (peek == null)
-                        System.out.println("== !!스택에 데이터가 없습니다!! ==");
+                        System.out.println("== 스택에 데이터가 없습니다 ==");
                     else
                         System.out.println("== 스택에서 꺼낸 값 : " + peek + " ==");
                     break;
@@ -192,10 +194,10 @@ public class DataTest {
                     break;
                 case 5:
                     stack.stackInit();
-                    System.out.println("== !!스택 초기화 완료!! ==");
+                    System.out.println("== 스택 초기화 완료 ==");
                     break;
                 default:
-                    System.out.println("== !!잘못 입력하였습니다. 다시 입력해주세요!! ==");
+                    System.out.println("== 잘못 입력하였습니다. 다시 입력해주세요 ==");
             }
         }
 
@@ -206,35 +208,46 @@ public class DataTest {
         int item = 0;
         int index = 0;
 
-        System.out.println("\n==============================");
-        System.out.println(
-                "배열을 이용한 리스트를 생성합니다." +
-                "\n기본 크기는 10입니다.\n" +
-                "1. 기본 리스트 생성\n" +
-                "2. 직접 리스트의 크기 지정 후 생성");
-        System.out.println("==============================");
-        System.out.print("번호 선택 후 Enter : ");
-        int initListSetting = sc.nextInt();
+        setting:
+        while (true) {
+            System.out.println("\n==============================");
+            System.out.println(
+                    "배열을 이용한 리스트를 생성합니다." +
+                    "\n기본 크기는 10입니다.\n" +
+                    "1. 기본 리스트 생성\n" +
+                    "2. 직접 리스트의 크기 지정 후 생성");
+            System.out.println("==============================");
+            System.out.print("번호 선택 후 Enter : ");
+            int initListSetting = sc.nextInt();
 
-        // 리스트 크기 설정
-        if (initListSetting == 1) {
-            list = new CustomArrayList();
-            System.out.println("기본 크기 리스트 생성 완료");
-        } else if (initListSetting == 2) {
-            System.out.print("크기를 설정하세요 : ");
-            int customCapacity = sc.nextInt();
-            list = new CustomArrayList(customCapacity);
+            // 리스트 크기 설정
+            switch (initListSetting) {
+                case 1:
+                    list = new CustomArrayList();
+                    System.out.println("== 기본 크기 리스트 생성 ==");
+                    break setting;
+                case 2:
+                    System.out.print("크기를 설정하세요 : ");
+                    int customCapacity = sc.nextInt();
+                    list = new CustomArrayList(customCapacity);
+                    System.out.println("== " + customCapacity + " 크기 리스트 생성 ==");
+                    break setting;
+                default:
+                    System.out.println("==  1 또는 2번을 입력해주세요 ==");
+            }
+
         }
+
 
         while (true) {
             System.out.println("\n==============================");
             System.out.println("\t\t\t순차 리스트");
-            System.out.println("1. 리스트 끝에 값 넣기");
-            System.out.println("2. 리스트 중간에 값 넣기");
-            System.out.println("3. 리스트에 해당 값 있는지 확인");
-            System.out.println("4. 해당 인덱스에 있는 값 찾기");
-            System.out.println("5. 해당 인덱스에 있는 값 삭제");
-            System.out.println("6. 리스트에 저장된 요소 총 갯수 구하기");
+            System.out.println("1. 리스트 끝에 추가");
+            System.out.println("2. 원하는 인덱스에 추가");
+            System.out.println("3. 리스트에 특정 값 존재 확인");
+            System.out.println("4. 특정 인덱스 값 찾기");
+            System.out.println("5. 특정 인덱스 값 삭제");
+            System.out.println("6. 저장된 데이터 갯수 구하기");
             System.out.println("7. 리스트 출력");
             System.out.println("8. 초기화");
             System.out.println("0. 메인 메뉴");
@@ -243,69 +256,71 @@ public class DataTest {
             int menu = sc.nextInt();
 
             switch (menu) {
-                case 0:
+                case 0: // 메인 메뉴
                     return;
 
-                case 1:
+                case 1: // 리스트 끝에 추가
                     System.out.print("리스트에 저장할 값을 입력하세요 : ");
                     item = sc.nextInt();
                     if (list.add(item))
-                        System.out.println("저장 성공!");
+                        System.out.println("== 저장 성공 ==");
                     else
-                        System.out.println("저장 실패!");
-                    break;
+                        System.out.println("== 저장 실패 ==");
 
-                case 2:
-                    System.out.print("값을 저장하기 위해 인덱스를 입력하세요 0부터 : ");
+                    break;
+                case 2: // 원하는 인덱스에 추가
+                    System.out.print("저장할 인덱스를 입력하세요(0 부터) : ");
                     index = sc.nextInt();
-                    System.out.print("리스트에 저장할 값을 입력하세요 : ");
+                    System.out.print("저장할 값을 입력하세요 : ");
                     item = sc.nextInt();
                     if (list.add(index, item))
-                        System.out.println("저장 성공!");
+                        System.out.println("== 저장 성공 ==");
                     else
-                        System.out.println("저장 실패!");
-                    break;
+                        System.out.println("== 저장 실패 ==");
 
-                case 3:
+                    break;
+                case 3: // 특정 값 확인
                     System.out.print("찾고 싶은 값을 입력하세요 : ");
                     item = sc.nextInt();
                     if (list.contains(item))
-                        System.out.println("입력한 값은 리스트에 존재 합니다.");
+                        System.out.println("== 있음 ==");
                     else
-                        System.out.println("리스트에 존재 하지 않습니다.");
-                    break;
+                        System.out.println("== 없음 ==");
 
-                case 4:
+                    break;
+                case 4: // 특정 인덱스 값 확인
                     System.out.print("찾고 싶은 위치의 인덱스를 입력하세요 : ");
                     index = sc.nextInt();
                     Integer findItem = list.get(index);
-                    if(findItem == null)
-                        System.out.println("해당 인덱스에 값이 존재하지 않습니다.");
-                    else
-                        System.out.println("인덱스 " + index + "위치에 존재하는 값 : " + findItem);
-                    break;
 
-                case 5:
+                    if(findItem == null)
+                        System.out.println("== 탐색 실패 ==");
+                    else
+                        System.out.println("== 탐색 성공 : " + findItem + " ==");
+
+                    break;
+                case 5: // 특정 인덱스 값 삭제
                     System.out.print("삭제하고 싶은 인덱스를 입력하세요 : ");
                     index = sc.nextInt();
                     Integer removeItem = list.remove(index);
+
                     if (removeItem == null)
-                        System.out.println("해당 인덱스에 값이 존재하지 않습니다.");
+                        System.out.println("== 삭제 실패 ==");
                     else
-                        System.out.println("삭제한 값 : " + removeItem);
+                        System.out.println("== 삭제 성공 : " + removeItem + " ==");
+
+                    break;
+                case 6: // 데이터 갯수 확인
+                    System.out.println("== TOTAL : " + list.size() + " ==");
                     break;
 
-                case 6:
-                    System.out.println("리스트에 저장된 요소의 수 :  " + list.size());
+                case 7: // 모든 데이터 출력
+                    System.out.println(list);
                     break;
 
-                case 7:
-                    System.out.println(list.toString());
-                    break;
-
-                case 8:
+                case 8: // 초기화
                     list.clear();
-                    System.out.println("초기화 성공!");
+                    System.out.println("== 초기화 성공! ==");
             }
         }
     }

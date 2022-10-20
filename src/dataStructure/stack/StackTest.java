@@ -3,7 +3,7 @@ package dataStructure.stack;
 public class StackTest {
 
     public static void main(String[] args) {
-        CustomStack stack = new CustomStack();
+        CustomStack<Integer> stack = new CustomStack<>();
 
         stack.push(4);
         stack.push(3);

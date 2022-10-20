@@ -1,19 +1,19 @@
 package dataStructure.stack;
 
-public class CustomStack {
+public class CustomStack<E> {
 
-    private final int[] stackArr;
+    private final Object[] stackArr;
     private int capacity = 10;
     private int top = -1;
 
     // 기본 초기화
     public CustomStack() {
-        this.stackArr = new int[capacity];
+        this.stackArr =  new Object[capacity];
     }
 
     // 저장 용량을 직접 설정하여 초기화
     public CustomStack(int capacityInit) {
-        this.stackArr = new int[capacity];
+        this.stackArr = new Object[capacity];
         this.capacity = capacityInit;
     }
 
@@ -26,7 +26,7 @@ public class CustomStack {
                 top++
                 array[top] = item
      */
-    public boolean push(int item) {
+    public boolean push(E item) {
         // 저장공간 초과
         if (top >= capacity - 1)
             return false;
@@ -45,12 +45,13 @@ public class CustomStack {
                 return array[top]
         }
      */
-    public Integer pop() {
+    @SuppressWarnings("unchecked")
+    public E pop() {
         // 스택에 데이터가 존재하지 않을 경우
         if (isEmpty())
             return null;
 
-        return stackArr[top--];
+        return (E) stackArr[top--];
     }
 
     /*
@@ -61,12 +62,14 @@ public class CustomStack {
             else
                 array[top]
      */
-    public Integer peek() {
+
+    @SuppressWarnings("unchecked")
+    public E peek() {
         // 스택에 데이터가 존재하지 않을 경우
         if (isEmpty())
             return null;
 
-        return stackArr[top];
+        return (E) stackArr[top];
     }
 
     /*
